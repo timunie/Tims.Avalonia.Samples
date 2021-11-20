@@ -1,0 +1,58 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ChangeContentBasedOnEnumSample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+		xmlns:model="using:ChangeContentBasedOnEnumSample.Models"
+        x:Class="ChangeContentBasedOnEnumSample.Views.MainWindow"
+		Width="400"
+		Height="300"
+		CanResize="False"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Select Template based on Enum">
+
+	<Window.DataContext>
+		<vm:MainWindowViewModel/>
+	</Window.DataContext>
+
+
+	<StackPanel Margin="20" Spacing="20">
+		
+		<TextBlock Text="Select a Shape" />
+
+		<ComboBox x:Name="ShapeSelector" SelectedIndex="0">
+			<model:ShapesEnum>RedCircle</model:ShapesEnum>
+			<model:ShapesEnum>BlueCircle</model:ShapesEnum>
+			<model:ShapesEnum>RedSquare</model:ShapesEnum>
+			<model:ShapesEnum>BlueSquare</model:ShapesEnum>
+		</ComboBox>
+			
+		
+		<TextBlock Text="You selected:" />
+
+		<StackPanel>
+			<StackPanel.DataTemplates>
+				<vm:DataTemplateSelector>
+					<DataTemplate x:Key="RedCircle">
+						<Ellipse Width="50" Height="50" Fill="Red" Stroke="DarkRed" StrokeThickness="2" />
+					</DataTemplate>
+					<DataTemplate x:Key="BlueCircle">
+						<Ellipse  Width="50" Height="50" Fill="Blue" Stroke="DarkBlue" StrokeThickness="2" />
+					</DataTemplate>
+					<DataTemplate x:Key="RedSquare">
+						<Rectangle  Width="50" Height="50" Fill="Red" Stroke="DarkRed" StrokeThickness="2" />
+					</DataTemplate>
+					<DataTemplate x:Key="BlueSquare">
+						<Rectangle  Width="50" Height="50" Fill="Blue" Stroke="DarkBlue" StrokeThickness="2" />
+					</DataTemplate>
+				</vm:DataTemplateSelector>
+			</StackPanel.DataTemplates>
+
+			<ContentControl Content="{Binding #ShapeSelector.SelectedItem}" HorizontalAlignment="Left" />
+		</StackPanel>
+	</StackPanel>
+
+
+
+</Window>

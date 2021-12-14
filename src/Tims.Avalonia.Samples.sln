@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollingIssueSample", "ScrollingIssueSample\ScrollingIssueSample.csproj", "{78EC176B-5559-48A5-9DFD-5626E6278EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeContentBasedOnEnumSample", "ChangeContentBasedOnEnumSample\ChangeContentBasedOnEnumSample.csproj", "{8EABEBD9-622A-448C-B893-552AA63AFA22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeContentBasedOnEnumSample", "ChangeContentBasedOnEnumSample\ChangeContentBasedOnEnumSample.csproj", "{8EABEBD9-622A-448C-B893-552AA63AFA22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarDatePickerIssue", "CalendarDatePickerIssue\CalendarDatePickerIssue.csproj", "{2299F0DE-E136-480C-822D-1CF2AFFA510E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2299F0DE-E136-480C-822D-1CF2AFFA510E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2299F0DE-E136-480C-822D-1CF2AFFA510E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2299F0DE-E136-480C-822D-1CF2AFFA510E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2299F0DE-E136-480C-822D-1CF2AFFA510E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

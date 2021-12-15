@@ -7,13 +7,14 @@
         x:Class="CalendarDatePickerIssue.Views.MainWindow"
 		x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        SizeToContent="WidthAndHeight"
         Title="CalendarDatePickerIssue">
-
+	
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
 
-	<StackPanel>
+	<StackPanel Margin="10" Spacing="5">
 		<TextBlock>Select the upper bound</TextBlock>
 		<CalendarDatePicker DisplayDateEnd="{CompiledBinding MaxDisplayDate}" SelectedDate="{CompiledBinding MinDisplayDate}" />
 		

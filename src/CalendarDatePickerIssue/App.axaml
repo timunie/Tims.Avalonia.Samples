@@ -3,10 +3,13 @@
              xmlns:local="using:CalendarDatePickerIssue"
              x:Class="CalendarDatePickerIssue.App">
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <FluentTheme Mode="Light" />
+        <Style Selector="CalendarDatePicker">
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        </Style>
     </Application.Styles>
 </Application>

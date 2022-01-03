@@ -30,90 +30,94 @@
 			<Setter Property="FontWeight" Value="SemiBold" />
 		</Style>
 	</Window.Styles>
-	
-	<ScrollViewer>
-		<StackPanel Spacing="10">
-			<TextBlock Classes="h1">
-				Scrolling Issue Demo
-			</TextBlock>
-
-			<TextBlock>
-				This demo shows how different Controls behave if you scroll with your mouse wheel. To see the effects place the pointer over any control and do the scroll. Some controls behave differently when they have focus.
-			</TextBlock>
 
 
-			<Border Height="300" Background="Aqua">
-				<TextBlock>Just some free space for scrolling</TextBlock>
-			</Border>
+	<DockPanel LastChildFill="True">
+		<ToggleSwitch Content="Bubble up scrolling" Name="ToggleBubbleUpScrolling"></ToggleSwitch>
+		<ScrollViewer>
+			<StackPanel Spacing="10">
+				<TextBlock Classes="h1">
+					Scrolling Issue Demo
+				</TextBlock>
 
-			<!-- TextBox -->
-			<TextBlock Classes="h2">TextBox</TextBlock>
-			<TextBlock>
-				Behaves like expected.
-			</TextBlock>
-			<TextBox Text="Some sample Text" />
-
-			<!-- ComboBox -->
-			<TextBlock Classes="h2">ComboBox</TextBlock>
-			<TextBlock>
-				If the control has focus the selection is changed, else the page will scroll. Feels natural imo.
-			</TextBlock>
-			<ComboBox SelectedIndex="1">
-				<ComboBoxItem>Abc</ComboBoxItem>
-				<ComboBoxItem>Def</ComboBoxItem>
-				<ComboBoxItem>Ghi</ComboBoxItem>
-				<ComboBoxItem>Jkl</ComboBoxItem>
-			</ComboBox>
-
-			<!-- NumericUpDown -->
-			<TextBlock Classes="h2">NumericUpDown</TextBlock>
-			<TextBlock>
-				If the control has focus the value is changed, else the page will scroll. Feels natural imo.
-			</TextBlock>
-			<NumericUpDown Value="100" />
-
-			<!-- ButtonSpinner -->
-			<TextBlock Classes="h2">ButtonSpinner</TextBlock>
-			<TextBlock>
-				This control spins the value and ignores if the control has the focus or not. Moreover the scroll is done if the control has focus or not. This feels unnatural to me. But maybe this has to be handles in the spin event. 
-			</TextBlock>
-			<ButtonSpinner Content="{CompiledBinding SpinValue}"  Spin="DoSpin">
-			</ButtonSpinner>
-
-			
-			<!-- Calendar -->
-			<TextBlock Classes="h2">Calendar</TextBlock>
-			<TextBlock>
-				This control changes the selected date and ignores if the control has the focus or not. This is different than other controls. If the user hits this control by accident scrolling will stop and the calendar changes instead. Feels unnatural imo.
-			</TextBlock>
-			<Calendar />
+				<TextBlock>
+					This demo shows how different Controls behave if you scroll with your mouse wheel. To see the effects place the pointer over any control and do the scroll. Some controls behave differently when they have focus.
+				</TextBlock>
 
 
-			<!-- DataGrid -->
-			<TextBlock Classes="h2">DataGrid</TextBlock>
-			<TextBlock>
-				This control scrolls the items if they can scroll or the outer page if end of scroll is reached. This feels natural imo.
-			</TextBlock>
-			<DataGrid Items="{Binding ItemsList}"  Height="200" >
-				<DataGrid.Columns>
-					<DataGridTextColumn Binding="{Binding}" />
-				</DataGrid.Columns>
-			</DataGrid>
+				<Border Height="300" Background="Aqua">
+					<TextBlock>Just some free space for scrolling</TextBlock>
+				</Border>
 
-			<!-- DataGrid -->
-			<TextBlock Classes="h2">DataGrid</TextBlock>
-			<TextBlock>
-				This control scrolls the items if they can scroll. Unlike DataGrid the outer page is not scrolled if end of scroll is reached. This feels unnatural imo.
-			</TextBlock>
-			<ListBox Items="{Binding ItemsList}"  Height="200"/>
+				<!-- TextBox -->
+				<TextBlock Classes="h2">TextBox</TextBlock>
+				<TextBlock>
+					Behaves like expected.
+				</TextBlock>
+				<TextBox Text="Some sample Text" />
 
-			
-			
-			<Border Height="300" Background="Aqua">
-				<TextBlock>Just some free space for scrolling</TextBlock>
-			</Border>
-			
-		</StackPanel>
-	</ScrollViewer>
+				<!-- ComboBox -->
+				<TextBlock Classes="h2">ComboBox</TextBlock>
+				<TextBlock>
+					If the control has focus the selection is changed, else the page will scroll. Feels natural imo.
+				</TextBlock>
+				<ComboBox SelectedIndex="1">
+					<ComboBoxItem>Abc</ComboBoxItem>
+					<ComboBoxItem>Def</ComboBoxItem>
+					<ComboBoxItem>Ghi</ComboBoxItem>
+					<ComboBoxItem>Jkl</ComboBoxItem>
+				</ComboBox>
+
+				<!-- NumericUpDown -->
+				<TextBlock Classes="h2">NumericUpDown</TextBlock>
+				<TextBlock>
+					If the control has focus the value is changed, else the page will scroll. Feels natural imo.
+				</TextBlock>
+				<NumericUpDown Value="100" />
+
+				<!-- ButtonSpinner -->
+				<TextBlock Classes="h2">ButtonSpinner</TextBlock>
+				<TextBlock>
+					This control spins the value and ignores if the control has the focus or not. Moreover the scroll is done if the control has focus or not. This feels unnatural to me. But maybe this has to be handles in the spin event.
+				</TextBlock>
+				<ButtonSpinner Content="{CompiledBinding SpinValue}" Spin="DoSpin">
+				</ButtonSpinner>
+
+
+				<!-- Calendar -->
+				<TextBlock Classes="h2">Calendar</TextBlock>
+				<TextBlock>
+					This control changes the selected date and ignores if the control has the focus or not. This is different than other controls. If the user hits this control by accident scrolling will stop and the calendar changes instead. Feels unnatural imo.
+				</TextBlock>
+				<Calendar />
+
+
+				<!-- DataGrid -->
+				<TextBlock Classes="h2">DataGrid</TextBlock>
+				<TextBlock>
+					This control scrolls the items if they can scroll or the outer page if end of scroll is reached. This feels natural imo.
+				</TextBlock>
+				<DataGrid ScrollViewer.BubbleUpScrollOnEndReached="{Binding #ToggleBubbleUpScrolling.IsChecked}" 
+				          Items="{Binding ItemsList}" Height="200">
+					<DataGrid.Columns>
+						<DataGridTextColumn Binding="{Binding}" />
+					</DataGrid.Columns>
+				</DataGrid>
+
+				<!-- DataGrid -->
+				<TextBlock Classes="h2">ListBox</TextBlock>
+				<TextBlock>
+					This control scrolls the items if they can scroll. Unlike DataGrid the outer page is not scrolled if end of scroll is reached. This feels unnatural imo.
+				</TextBlock>
+				<ListBox ScrollViewer.BubbleUpScrollOnEndReached="{Binding #ToggleBubbleUpScrolling.IsChecked}" Items="{Binding ItemsList}" Height="200" />
+
+
+				<Border Height="300" Background="Aqua">
+					<TextBlock>Just some free space for scrolling</TextBlock>
+				</Border>
+
+			</StackPanel>
+		</ScrollViewer>
+	</DockPanel>
 
 </Window>

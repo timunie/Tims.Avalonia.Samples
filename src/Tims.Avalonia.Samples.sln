@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollingIssueSample", "Scr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeContentBasedOnEnumSample", "ChangeContentBasedOnEnumSample\ChangeContentBasedOnEnumSample.csproj", "{8EABEBD9-622A-448C-B893-552AA63AFA22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarDatePickerValidationIssue", "CalendarDatePickerValidationIssue\CalendarDatePickerValidationIssue.csproj", "{8E9B4BA2-542B-4431-BC08-EAE09105C89A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

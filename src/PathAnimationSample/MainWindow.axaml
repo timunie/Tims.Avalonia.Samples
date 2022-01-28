@@ -1,0 +1,71 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PathAnimationSample.MainWindow"
+        Title="PathAnimationSample">
+	<Window.Styles>
+		<Style Selector="Path">
+			<Style.Animations>
+		<Animation Duration="0:0:5" IterationCount="INFINITE" >
+			<KeyFrame Cue="0%">
+				<Setter Property="StrokeDashOffset" Value="0"/>
+			</KeyFrame>
+			<KeyFrame Cue="50%">
+				<Setter Property="StrokeDashOffset" Value="10"/>
+			</KeyFrame>
+			<KeyFrame Cue="100%">
+				<Setter Property="StrokeDashOffset" Value="0"/>
+			</KeyFrame>
+		</Animation>
+	</Style.Animations>
+		</Style>
+	</Window.Styles>
+
+
+	<Viewbox Stretch="UniformToFill">
+		<Canvas Name="svg26" Width="116" Height="32">
+			<Canvas.RenderTransform>
+				<TranslateTransform X="0" Y="0"/>
+			</Canvas.RenderTransform>
+			<Canvas.Resources>
+				<LinearGradientBrush x:Key="paint0_linear" StartPoint="8,24" EndPoint="23,7">
+					<LinearGradientBrush.GradientStops>
+							<GradientStop Color="#613079"/>
+							<GradientStop Color="#8B44A9" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+				<LinearGradientBrush  x:Key="paint1_linear" StartPoint="0,0" EndPoint="0,32">
+					<LinearGradientBrush.GradientStops>
+							<GradientStop Color="#1ABBBBBB"/>
+							<GradientStop Color="#1A000000" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+				<LinearGradientBrush  x:Key="linearGradient870" StartPoint="-1,16" EndPoint="33,16">
+					<LinearGradientBrush.GradientStops>
+							<GradientStop Color="#613079"/>
+							<GradientStop Color="#8B44A9" Offset="1"/>
+					</LinearGradientBrush.GradientStops>
+				</LinearGradientBrush>
+			</Canvas.Resources>
+			<Path  Name="path4" Fill="{StaticResource paint0_linear}" StrokeDashArray="2, 2" StrokeThickness="2" Stroke="{StaticResource linearGradient870}" >
+				<Path.Data>
+					<PathGeometry Figures="M 16 4 C 9.37266 4 4 9.37266 4 16 C 4 22.6274 9.37266 28 16 28 L 25.193359 28 C 25.565159 28 26.579162 27.810431 27.289062 27.019531 C 27.999063 26.228631 28 25.371094 28 25.371094 L 28 16 C 28 9.37266 22.6274 4 16 4 z " FillRule="NonZero"/>
+				</Path.Data>
+			</Path>
+			<Path  Name="path6" Fill="#ffffff">
+				<Path.Data>
+					<PathGeometry Figures="M12.2346 16.0284C12.2346 13.9571 13.9137 12.278 15.985 12.278C18.0563 12.278 19.7354 13.9571 19.7354 16.0284C19.7354 18.0997 18.0563 19.7788 15.985 19.7788C13.9137 19.7788 12.2346 18.0997 12.2346 16.0284Z" FillRule="NonZero"/>
+				</Path.Data>
+			</Path>
+			<Path  Name="path8" Fill="#ffffff">
+				<Path.Data>
+					<PathGeometry Figures="M28 25.3708L27.9999 15.9999C27.9999 9.37256 22.6273 4 15.9999 4C9.37256 4 4 9.37256 4 15.9999C4 22.6273 9.37256 27.9999 15.9999 27.9999H25.1943C25.5661 27.9999 26.5801 27.8105 27.29 27.0196C28 26.2287 28 25.3708 28 25.3708ZM15.985 8.10785C12.3217 8.10785 9.23924 10.5948 8.33388 13.9724C9.29045 14.204 10 15.0541 10 16.0674C10 17.0737 9.30032 17.919 8.35386 18.1575C9.28384 21.4979 12.3482 23.949 15.985 23.949C17.3561 23.949 18.6458 23.6006 19.7705 22.9875V23.866H23.8704V16.7794C23.8936 16.5322 23.9055 16.2817 23.9055 16.0284C23.9055 11.654 20.3594 8.10785 15.985 8.10785ZM7.80899 17.4832C8.60949 17.4832 9.25843 16.8342 9.25843 16.0337C9.25843 15.2332 8.60949 14.5843 7.80899 14.5843C7.00849 14.5843 6.35955 15.2332 6.35955 16.0337C6.35955 16.8342 7.00849 17.4832 7.80899 17.4832Z" FillRule="EvenOdd"/>
+				</Path.Data>
+			</Path>
+			<Canvas Name="g33"/>
+		</Canvas>
+	</Viewbox>
+		
+</Window>

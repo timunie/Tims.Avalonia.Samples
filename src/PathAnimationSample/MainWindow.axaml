@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PathAnimationSample.MainWindow"
+        Title="PathAnimationSample">
+	<Window.Styles>
+		<Style Selector="Path">
+			<Style.Animations>
+		<Animation Duration="0:0:5" IterationCount="INFINITE" >
+			<KeyFrame Cue="0%">
+				<Setter Property="StrokeDashOffset" Value="0"/>
+			</KeyFrame>
+			<KeyFrame Cue="50%">
+				<Setter Property="StrokeDashOffset" Value="100"/>
+			</KeyFrame>
+			<KeyFrame Cue="100%">
+				<Setter Property="StrokeDashOffset" Value="0"/>
+			</KeyFrame>
+		</Animation>
+	</Style.Animations>
+		</Style>
+	</Window.Styles>
+	
+		<Path x:Name="MyPath" Stretch="Uniform" Margin="10" 
+			  StrokeDashArray="10, 10"
+			  Data="m 46.113098,112.6369 c 1.402383,1.02336 -0.687584,2.39528 -1.700893,2.33085 -2.746006,-0.17457 -3.703792,-3.50727 -2.960813,-5.73263 1.329016,-3.98066 6.207163,-5.18487 9.764386,-3.59078 5.220368,2.3394 6.702654,8.94108 4.220732,13.79613 -3.308011,6.47103 -11.686733,8.23566 -17.827878,4.8507 -7.728004,-4.25963 -9.776429,-14.4379 -5.480652,-21.85963 5.202761,-8.9887 17.192156,-11.321693 25.891371,-6.110609 10.251724,6.141079 12.869778,19.948329 6.740571,29.923119 -7.076412,11.51628 -22.705795,14.41974 -33.954863,7.37053 -12.781907,-8.00976 -15.971016,-25.46416 -8.000491,-37.986611 8.941724,-14.048298 28.22318,-17.523247 42.018356,-8.63045 15.31526,9.872689 19.076194,30.982701 9.26041,46.050101" Stroke="Red" StrokeThickness="1" />
+	
+</Window>

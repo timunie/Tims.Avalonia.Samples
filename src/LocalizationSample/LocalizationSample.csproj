@@ -9,6 +9,7 @@
     <AvaloniaResource Include="Assets\**" />
     <AvaloniaResource Remove="Assets\Lang\Translations.de-DE.axaml" />
     <AvaloniaResource Remove="Assets\Lang\Translations.en-US.axaml" />
+    <AvaloniaResource Remove="Assets\Lang\Translations.pl-PL.axaml" />
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>

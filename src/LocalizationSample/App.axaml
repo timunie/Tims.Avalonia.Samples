@@ -9,7 +9,7 @@
 	<Application.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceInclude Source="/Assets/Lang/Translations.de-DE.axaml" />
+				<ResourceInclude Source="/Assets/Lang/Translations.en-US.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	

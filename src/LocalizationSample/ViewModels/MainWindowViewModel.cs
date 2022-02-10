@@ -11,17 +11,18 @@ namespace LocalizationSample.ViewModels
     {
         public string Greeting => "Welcome to Avalonia!";
 
-        public void Translate()
+        public void Translate(string targetLanguage)
         {
-            var translations = App.Current.Resources.MergedDictionaries.OfType<ResourceInclude>().FirstOrDefault(x => x.Source.OriginalString.Contains("Translations."));
+            var translations = App.Current.Resources.MergedDictionaries.OfType<ResourceInclude>().FirstOrDefault(x => x.Source?.OriginalString?.Contains("Translations.") ?? false);
 
-            App.Current.Resources.MergedDictionaries.Remove(translations);
+            if (translations != null)
+                App.Current.Resources.MergedDictionaries.Remove(translations);
 
 
             App.Current.Resources.MergedDictionaries.Add(
                 new ResourceInclude()
                 {
-                    Source = new Uri("avares://LocalizationSample/Assets/Lang/Translations.en-US.axaml")
+                    Source = new Uri($"avares://LocalizationSample/Assets/Lang/Translations.{targetLanguage}.axaml")
                 });
         }
     }

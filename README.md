@@ -36,3 +36,5 @@ This sample shows how you can use DynamicResource to translate the UI.
 
 [Source](src/LocalizationSample)
 
+[read more about it here](https://www.codeproject.com/Articles/5317972/Theming-and-Localization-Functionality-for-Multipl)
+

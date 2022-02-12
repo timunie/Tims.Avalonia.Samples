@@ -11,6 +11,8 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+	<Button Command="{Binding OpenFile}">
+		<Image Source="{Binding Thumbnail}" Stretch="Uniform" StretchDirection="DownOnly" />
+	</Button>
 	
-	<Image Source="{Binding Thumbnail}" Stretch="Uniform" StretchDirection="DownOnly" />
 </Window>

@@ -53,7 +53,7 @@ namespace ThumbNailImages.UnmanagedWin32Code
             try
             {
                 // return a System.Drawing.Bitmap from the hBitmap
-                return GetBitmapFromHBitmap(hBitmap);
+                return GetBitmapFromHBitmap_2(hBitmap);
             }
             finally
             {
@@ -80,6 +80,57 @@ namespace ThumbNailImages.UnmanagedWin32Code
             ms.Position = 0;
 
             return new Bitmap(ms);
+        }
+
+        // First attempt
+        public static Bitmap GetBitmapFromHBitmap_1(IntPtr nativeHBitmap)
+        {
+            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+                nativeHBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+
+            // There were missing parentheses here (they are important because this is integer arithmetic.
+            // Also worth noting, the code below only supports 32bpp images. In this case, stride
+            // is always equal to width, so a micro-optim would be to not compute the stride.
+            var stride = 4 * ((bitmapSource.PixelWidth * bitmapSource.Format.BitsPerPixel + 31) / 32);
+
+            var destinationBuffer = new byte[stride * bitmapSource.PixelHeight];
+            bitmapSource.CopyPixels(destinationBuffer, stride, 0);
+
+            var pinned = GCHandle.Alloc(destinationBuffer, GCHandleType.Pinned);
+            try
+            {
+                var pointer = pinned.AddrOfPinnedObject();
+
+                var dpi = new Avalonia.Vector(bitmapSource.DpiX, bitmapSource.DpiY);
+                var size = new PixelSize(bitmapSource.PixelWidth, bitmapSource.PixelHeight);
+                var pixelFormat = bitmapSource.Format.BitsPerPixel == 32
+                    ? PixelFormat.Bgra8888
+                    : throw new NotSupportedException("Only 32bpp images are supported");
+
+                return new Bitmap(pixelFormat, AlphaFormat.Unpremul, pointer, size, dpi, stride);
+            }
+            finally
+            {
+                pinned.Free();
+            }
+        }
+
+        // Better attempt
+        public static Bitmap GetBitmapFromHBitmap_2(IntPtr nativeHBitmap)
+        {
+            var bitmapSource = Imaging.CreateBitmapSourceFromHBitmap(
+                nativeHBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+
+            var dpi = new Avalonia.Vector(bitmapSource.DpiX, bitmapSource.DpiY);
+            var size = new PixelSize(bitmapSource.PixelWidth, bitmapSource.PixelHeight);
+            var pixelFormat = bitmapSource.Format.BitsPerPixel == 32
+                ? PixelFormat.Bgra8888
+                : throw new NotSupportedException("Only 32bpp images are supported");
+
+            var bitmap = new Avalonia.Media.Imaging.WriteableBitmap(size, dpi, pixelFormat, AlphaFormat.Unpremul);
+            using (var buffer = bitmap.Lock())
+                bitmapSource.CopyPixels(new Int32Rect(0, 0, size.Width, size.Height), buffer.Address, buffer.RowBytes * size.Height, buffer.RowBytes);
+            return bitmap;
         }
 
         private static IntPtr GetHBitmap(string fileName, int width, int height, ThumbnailOptions options)

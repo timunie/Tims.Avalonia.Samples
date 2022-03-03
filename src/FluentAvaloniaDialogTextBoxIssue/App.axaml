@@ -1,0 +1,13 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:FluentAvaloniaDialogTextBoxIssue"
+             xmlns:ui="using:FluentAvalonia.Styling"
+             x:Class="FluentAvaloniaDialogTextBoxIssue.App">
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <ui:FluentAvaloniaTheme />
+    </Application.Styles>
+</Application>

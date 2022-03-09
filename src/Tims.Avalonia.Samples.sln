@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathAnimationSample", "Path
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizationSample", "LocalizationSample\LocalizationSample.csproj", "{549DCAD6-D06F-465D-A8FC-811D8DC77145}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnalogClockSample", "AnalogClockSample\AnalogClockSample.csproj", "{AE6B89EE-E5C7-433B-902C-E1968CA003EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{549DCAD6-D06F-465D-A8FC-811D8DC77145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{549DCAD6-D06F-465D-A8FC-811D8DC77145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{549DCAD6-D06F-465D-A8FC-811D8DC77145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6B89EE-E5C7-433B-902C-E1968CA003EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6B89EE-E5C7-433B-902C-E1968CA003EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6B89EE-E5C7-433B-902C-E1968CA003EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6B89EE-E5C7-433B-902C-E1968CA003EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

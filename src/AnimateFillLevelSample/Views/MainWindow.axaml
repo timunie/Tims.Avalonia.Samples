@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AnimateFillLevelSample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AnimateFillLevelSample.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AnimateFillLevelSample">
+
+	<Window.Styles>
+		<Style Selector="ProgressBar">
+			<Setter Property="Orientation" Value="Vertical" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<Panel>
+							<Panel  x:Name="DeterminateRoot">
+								<Border Width="175"
+										Name="PART_Indicator"
+										CornerRadius="0 0 20 20 "
+										VerticalAlignment="Bottom" 
+										Background="Orange">
+								</Border>
+
+								<Border Width="175"  
+										BorderThickness="5 0 5 5 " 
+										BorderBrush="Gray"
+										CornerRadius="0 0 20 20 ">
+								</Border>
+							</Panel>
+						</Panel>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style Selector="ProgressBar /template/ Border#PART_Indicator">
+			<Setter Property="Transitions">
+				<Transitions>
+					<DoubleTransition Property="Height" Duration="0:0:0.2"/>
+				</Transitions>
+			</Setter>
+		</Style>
+
+	</Window.Styles>
+
+	<Window.DataContext>
+		<vm:MainWindowViewModel/>
+	</Window.DataContext>
+
+	<UniformGrid>
+		<Slider Value="{Binding FillLevel}" />
+
+		<ProgressBar Value="{Binding FillLevel}"  />
+		
+	</UniformGrid>
+	
+	
+</Window>

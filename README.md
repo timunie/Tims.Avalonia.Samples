@@ -38,3 +38,15 @@ This sample shows how you can use DynamicResource to translate the UI.
 
 [read more about it here](https://www.codeproject.com/Articles/5317972/Theming-and-Localization-Functionality-for-Multipl)
 
+
+## Animate fill level sample
+
+We can't animate a progress bar value as it is a direct property, but we can animate the width or height of the progress bar. 
+
+![AnimateFillLevelSample](https://user-images.githubusercontent.com/47110241/166155265-c9c794f1-a0d3-453a-9fad-9fae43bc4626.png)
+
+
+[Source](src/AnimateFillLevelSample)
+
+[read more about it here](https://docs.avaloniaui.net/docs/animations/transitions)
+

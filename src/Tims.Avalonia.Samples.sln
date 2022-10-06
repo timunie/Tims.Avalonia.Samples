@@ -5,15 +5,13 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScrollingIssueSample", "ScrollingIssueSample\ScrollingIssueSample.csproj", "{78EC176B-5559-48A5-9DFD-5626E6278EBC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChangeContentBasedOnEnumSample", "ChangeContentBasedOnEnumSample\ChangeContentBasedOnEnumSample.csproj", "{8EABEBD9-622A-448C-B893-552AA63AFA22}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarDatePickerValidationIssue", "CalendarDatePickerValidationIssue\CalendarDatePickerValidationIssue.csproj", "{8E9B4BA2-542B-4431-BC08-EAE09105C89A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathAnimationSample", "PathAnimationSample\PathAnimationSample.csproj", "{5435466F-BD9D-4A6D-B413-17744434D9B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalizationSample", "LocalizationSample\LocalizationSample.csproj", "{549DCAD6-D06F-465D-A8FC-811D8DC77145}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimateFillLevelSample", "AnimateFillLevelSample\AnimateFillLevelSample.csproj", "{F4359C5F-06BC-4F67-A811-60B7C68A92A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimateFillLevelSample", "AnimateFillLevelSample\AnimateFillLevelSample.csproj", "{F4359C5F-06BC-4F67-A811-60B7C68A92A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{78EC176B-5559-48A5-9DFD-5626E6278EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78EC176B-5559-48A5-9DFD-5626E6278EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78EC176B-5559-48A5-9DFD-5626E6278EBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EABEBD9-622A-448C-B893-552AA63AFA22}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E9B4BA2-542B-4431-BC08-EAE09105C89A}.Release|Any CPU.ActiveCfg = Release|Any CPU

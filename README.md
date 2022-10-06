@@ -6,9 +6,8 @@ A collection of some sample Apps
 
 ## Change Content based on Enum-Value
 
-This sample shows how to change the content of a control based on an enum value. We use `IDataTemplate` to achieve this. 
-
-[Source](src/ChangeContentBasedOnEnumSample)
+This sample was moved to a new location. Please visit: 
+[[Avalonia.Samples]](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample)
 
 
 -------- 

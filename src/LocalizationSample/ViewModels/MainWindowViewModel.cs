@@ -13,7 +13,7 @@ namespace LocalizationSample.ViewModels
 
         public void Translate(string targetLanguage)
         {
-            var translations = App.Current.Resources.MergedDictionaries.OfType<ResourceInclude>().FirstOrDefault(x => x.Source?.OriginalString?.Contains("Translations.") ?? false);
+            var translations = App.Current.Resources.MergedDictionaries.OfType<ResourceInclude>().FirstOrDefault(x => x.Source?.OriginalString?.Contains("/Lang/") ?? false);
 
             if (translations != null)
                 App.Current.Resources.MergedDictionaries.Remove(translations);
@@ -22,7 +22,7 @@ namespace LocalizationSample.ViewModels
             App.Current.Resources.MergedDictionaries.Add(
                 new ResourceInclude()
                 {
-                    Source = new Uri($"avares://LocalizationSample/Assets/Lang/Translations.{targetLanguage}.axaml")
+                    Source = new Uri($"avares://LocalizationSample/Assets/Lang/{targetLanguage}.axaml")
                 });
         }
     }

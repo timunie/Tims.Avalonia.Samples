@@ -22,6 +22,6 @@
 			<Button Content="Polish" HorizontalAlignment="Center" Command="{Binding Translate}" CommandParameter="pl-PL"/>
 		</UniformGrid>
 		
-		<TextBlock Text="{DynamicResource Greetings}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		<TextBlock Text="{DynamicResource My.Strings.Greetings}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 	</DockPanel>
 </Window>

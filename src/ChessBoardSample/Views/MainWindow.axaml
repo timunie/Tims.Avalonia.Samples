@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ChessBoardSample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:ChessBoardSample.Models"
+        xmlns:converters="clr-namespace:ChessBoardSample.Converters"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ChessBoardSample.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        x:CompileBindings="True"
+        x:DataType="vm:MainWindowViewModel"
+        Title="ChessBoardSample">
+    
+    <Window.Resources>
+        <!-- Needed to convert a given color into a brush -->
+        <converters:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+    </Window.Resources>
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <ItemsControl Items="{Binding BoardItems}"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+        <!-- Set the DataTemplate -->
+        <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="models:BoardItem">
+                <Rectangle Fill="{Binding Color, Converter={StaticResource ColorToSolidColorBrushConverter}}" 
+                           Width="50"
+                           Height="50"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        
+        <!-- Use a custom ItemsPanel to get 8 items in a row -->
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <UniformGrid Columns="8" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+
+</Window>

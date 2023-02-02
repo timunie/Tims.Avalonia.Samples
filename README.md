@@ -50,3 +50,12 @@ We can't animate a progress bar value as it is a direct property, but we can ani
 
 [read more about it here](https://docs.avaloniaui.net/docs/animations/transitions)
 
+
+## ChessBoard - sample
+
+Shows how to render a chess board using the MVVM approach. Idea taken from here: https://github.com/AvaloniaUI/Avalonia/discussions/10144
+
+![ChessBoard result](Img/ChessBoard.png)
+
+[Source](src/ChessBoardSample)
+

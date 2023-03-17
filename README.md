@@ -32,6 +32,7 @@ This sample shows how you can use DynamicResource to translate the UI.
 
 ![image](https://user-images.githubusercontent.com/47110241/153450248-dc461b39-3634-48b5-b17d-6c15775013ad.png)
 
+> **Note**: In the folder [_Localization_Helper](src/LocalizationSample/_Localization_Helper) you can find an Excel-File that can create the needed files for you. Check the Settings-Tab to control the output. 
 
 [Source](src/LocalizationSample)
 

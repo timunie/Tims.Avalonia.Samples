@@ -1,10 +1,7 @@
+﻿
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:system="using:System"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- A String representing the welcome message -->
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
     <system:String x:Key="My.Strings.Greetings">Welcome to Avalonia :-)</system:String>
-
-    <!-- No polish translation -->
     <system:String x:Key="My.Strings.HelloWorld">Hello World</system:String>
-
 </ResourceDictionary>

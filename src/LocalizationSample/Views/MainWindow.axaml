@@ -7,7 +7,7 @@
 		Width="300" Height="200"
         x:Class="LocalizationSample.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="LocalizationSample">
+        Title="{DynamicResource My.Strings.HelloWorld}">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>

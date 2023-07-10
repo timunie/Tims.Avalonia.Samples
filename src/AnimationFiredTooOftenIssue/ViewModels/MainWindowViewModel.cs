@@ -7,7 +7,7 @@ namespace AnimationFiredTooOftenIssue.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     { 
-        public List<Item> Items { get; } = Enumerable.Range(0, 1000).Select(x => new Item { IsSelected = x % 1 == 0, Name = "Person " + x }).ToList();
+        public List<Item> Items { get; } = Enumerable.Range(0, 1000).Select(x => new Item { IsSelected = x % 2 == 0, Name = "Person " + x }).ToList();
     }
 
     public class Item

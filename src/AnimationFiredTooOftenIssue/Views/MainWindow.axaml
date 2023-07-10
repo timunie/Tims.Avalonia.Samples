@@ -12,10 +12,10 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<DataGrid Items="{Binding Items}">
+	<DataGrid ItemsSource="{Binding Items}">
 		<DataGrid.Columns>
 			<DataGridTemplateColumn Header="IsActive">
-				<DataTemplate>
+				<DataTemplate DataType="vm:Item">
 				<ToggleSwitch IsChecked="{Binding IsSelected}" />
 			</DataTemplate>
 			</DataGridTemplateColumn>

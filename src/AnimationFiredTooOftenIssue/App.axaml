@@ -1,15 +1,14 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:AnimationFiredTooOftenIssue"
-			 xmlns:sty="using:FluentAvalonia.Styling"
+             RequestedThemeVariant="Light"
              x:Class="AnimationFiredTooOftenIssue.App">
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
 
     <Application.Styles>
-		<!--<sty:FluentAvaloniaTheme  />-->
-		<FluentTheme Mode="Light" />
-		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
+		<FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"></StyleInclude>
     </Application.Styles>
 </Application>

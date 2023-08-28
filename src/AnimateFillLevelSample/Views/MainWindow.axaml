@@ -11,6 +11,7 @@
 	<Window.Styles>
 		<Style Selector="ProgressBar">
 			<Setter Property="Orientation" Value="Vertical" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
 			<Setter Property="Template">
 				<Setter.Value>
 					<ControlTemplate>

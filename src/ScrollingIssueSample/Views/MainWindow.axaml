@@ -97,8 +97,8 @@
 				<TextBlock>
 					This control scrolls the items if they can scroll or the outer page if end of scroll is reached. This feels natural imo.
 				</TextBlock>
-				<DataGrid ScrollViewer.BubbleUpScrollOnEndReached="{Binding #ToggleBubbleUpScrolling.IsChecked}" 
-				          Items="{Binding ItemsList}" Height="200">
+				<DataGrid ScrollViewer.IsScrollChainingEnabled="{Binding #ToggleBubbleUpScrolling.IsChecked}" 
+				          ItemsSource="{Binding ItemsList}" Height="200">
 					<DataGrid.Columns>
 						<DataGridTextColumn Binding="{Binding}" />
 					</DataGrid.Columns>
@@ -109,7 +109,7 @@
 				<TextBlock>
 					This control scrolls the items if they can scroll. Unlike DataGrid the outer page is not scrolled if end of scroll is reached. This feels unnatural imo.
 				</TextBlock>
-				<ListBox ScrollViewer.BubbleUpScrollOnEndReached="{Binding #ToggleBubbleUpScrolling.IsChecked}" Items="{Binding ItemsList}" Height="200" />
+				<ListBox ScrollViewer.IsScrollChainingEnabled="{Binding #ToggleBubbleUpScrolling.IsChecked}" ItemsSource="{Binding ItemsList}" Height="200" />
 
 
 				<Border Height="300" Background="Aqua">

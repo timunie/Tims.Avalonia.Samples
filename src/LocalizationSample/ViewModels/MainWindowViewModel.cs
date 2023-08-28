@@ -1,9 +1,9 @@
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml.MarkupExtensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Markup.Xaml.Styling;
+using Avalonia.Platform;
 
 namespace LocalizationSample.ViewModels
 {
@@ -18,9 +18,10 @@ namespace LocalizationSample.ViewModels
             if (translations != null)
                 App.Current.Resources.MergedDictionaries.Remove(translations);
 
-
+            // var resource = AssetLoader.Open(new Uri($"avares://LocalizationSample/Assets/Lang/{targetLanguage}.axaml"));
+            
             App.Current.Resources.MergedDictionaries.Add(
-                new ResourceInclude()
+                new ResourceInclude(new Uri($"avares://LocalizationSample/Assets/Lang/{targetLanguage}.axaml"))
                 {
                     Source = new Uri($"avares://LocalizationSample/Assets/Lang/{targetLanguage}.axaml")
                 });

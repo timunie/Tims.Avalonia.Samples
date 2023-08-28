@@ -6,6 +6,8 @@
         mc:Ignorable="d" 
 		Width="300" Height="200"
         x:Class="LocalizationSample.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        x:CompileBindings="True"
         Icon="/Assets/avalonia-logo.ico"
         Title="{DynamicResource My.Strings.HelloWorld}">
 
